@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">UiComponents</string>
+    <string name="menu_button_theme_color_picker">Theme Color Picker</string>
 </resources>

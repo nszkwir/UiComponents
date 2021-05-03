@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.spitzer.uicomponents.databinding.FragmentMenuBinding
+import com.spitzer.uicomponents.themecolor.ThemeColorFragment
 
 class MenuFragment : Fragment() {
 

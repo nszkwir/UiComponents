@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.spitzer.uicomponents.themecolor.ThemeColorViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ThemeColorFragment">
+        android:padding="@dimen/main_fragment_container_padding"
+        android:background="@color/lightcyan">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/themeEditorButton"
@@ -19,5 +23,129 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:elevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/themeEditorButton">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/primaryColorLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Primay color"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <SeekBar
+                    android:id="@+id/seekBarRed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:elevation="5dp"
+                    android:indeterminate="false"
+                    android:max="255"
+                    android:min="0"
+                    android:progress="@={viewModel.redValue}"
+                    android:tooltipText="RED"
+                    app:layout_constraintEnd_toStartOf="@+id/seekBarRedValueText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/primaryColorLabel" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/seekBarRedValueText"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="@={`` + viewModel.redValue}"
+                    app:layout_constraintEnd_toStartOf="@+id/colorSampler"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarRed"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarRed" />
+
+                <SeekBar
+                    android:id="@+id/seekBarGreen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:elevation="5dp"
+                    android:indeterminate="false"
+                    android:max="255"
+                    android:min="0"
+                    android:progress="@={viewModel.greenValue}"
+                    android:tooltipText="RED"
+                    app:layout_constraintEnd_toStartOf="@+id/seekBarGreenValueText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarRed" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/seekBarGreenValueText"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="@={`` + viewModel.greenValue}"
+                    app:layout_constraintEnd_toStartOf="@+id/colorSampler"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarGreen"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarGreen" />
+
+                <SeekBar
+                    android:id="@+id/seekBarBlue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:elevation="5dp"
+                    android:indeterminate="false"
+                    android:max="255"
+                    android:min="0"
+                    android:progress="@={viewModel.blueValue}"
+                    android:tooltipText="RED"
+                    app:layout_constraintEnd_toStartOf="@+id/seekBarBlueValueText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarGreen" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/seekBarBlueValueText"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="@={`` + viewModel.blueValue}"
+                    app:layout_constraintEnd_toStartOf="@+id/colorSampler"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarBlue"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarBlue" />
+
+                <View
+                    android:id="@+id/colorSampler"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarBlueValueText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarRed"
+                    android:background="@color/white" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:text="@={viewModel.hexString}"
+                    android:editable="false"
+                    android:textIsSelectable="true"
+                    app:layout_constraintStart_toStartOf="@+id/colorSampler"
+                    app:layout_constraintEnd_toEndOf="@+id/colorSampler"
+                    app:layout_constraintTop_toBottomOf="@+id/colorSampler"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
