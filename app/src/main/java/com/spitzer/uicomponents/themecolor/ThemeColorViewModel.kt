@@ -1,9 +1,7 @@
 package com.spitzer.uicomponents.themecolor
 
 import android.graphics.Color
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 
 class ThemeColorViewModel : ViewModel() {
@@ -13,19 +11,12 @@ class ThemeColorViewModel : ViewModel() {
     val hexColor: MutableLiveData<Int> by lazy {MutableLiveData<Int>()}
     val hexString: MutableLiveData<String> by lazy {MutableLiveData<String>()}
 
-    val red : LiveData<Int>
-    get() = redValue
-
-    val green : LiveData<Int>
-        get() = greenValue
-
-    val blue : LiveData<Int>
-        get() = blueValue
+    val primaryColorData: MutableLiveData<ColorData> by lazy {MutableLiveData<ColorData>()}
 
     fun calculateHexColor() : String = Integer.toHexString(
         Color.rgb(
             redValue.value ?: 0,
-            greenValue.value ?: 0,
+            primaryColorData.value?.greenValue?.value ?: 0,
             blueValue.value ?: 0
         )
     ).substring(2)
@@ -40,7 +31,6 @@ class ThemeColorViewModel : ViewModel() {
         redValue.value = 0
         greenValue.value = 0
         blueValue.value = 0
-
-
+        primaryColorData.value = ColorData()
     }
 }
