@@ -1,2 +1,4 @@
+include ':common'
+include ':uicomponents'
 include ':app'
 rootProject.name = "UiComponents"
