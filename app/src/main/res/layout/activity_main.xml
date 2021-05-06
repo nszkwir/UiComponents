@@ -3,7 +3,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container_view"
+        android:name="com.spitzer.uicomponents.MenuFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="com.spitzer.uicomponents.MenuFragment" />
+        android:layout_height="match_parent" />
 </layout>

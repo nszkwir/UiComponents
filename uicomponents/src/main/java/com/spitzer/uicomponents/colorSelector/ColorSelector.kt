@@ -10,7 +10,7 @@ import com.google.android.material.card.MaterialCardView
 import com.spitzer.uicomponents.R
 import kotlinx.android.synthetic.main.card_view_color_selector.view.*
 
-class ColorSelector: MaterialCardView {
+class ColorSelector : MaterialCardView {
     private lateinit var colorSelectorAttr: ColorSelectorAttr
     private lateinit var colorSelectorConfiguration: ColorSelectorConfiguration
     private lateinit var mLinkingFunction: (Int) -> Unit
@@ -191,13 +191,14 @@ class ColorSelector: MaterialCardView {
         titleLabel.text = title
     }
 
-    fun onValuesChanges(linkingFunction: (Int)->Unit){
+    fun onValuesChanges(linkingFunction: (Int) -> Unit) {
         mLinkingFunction = linkingFunction
     }
 
     fun notifyColorChange() {
         mLinkingFunction(colorSelected)
     }
+
     companion object {
         const val MIN_PROGRESS_VALUE = 0
         const val MAX_PROGRESS_VALUE = 255

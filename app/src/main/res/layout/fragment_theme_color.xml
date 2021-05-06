@@ -18,22 +18,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.spitzer.uicomponents.colorSelector.WrapContentHeightViewPager
+        <com.spitzer.uicomponents.customcontainers.WrapContentHeightViewPager
             android:id="@+id/vPager"
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/themeEditorButton"/>
-
-<!--        <com.spitzer.uicomponents.colorSelector.ColorSelector-->
-<!--            android:id="@+id/primaryColorSelector"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent" />-->
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/themeEditorButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -8,15 +8,13 @@ class ThemeColorViewModel : ViewModel() {
     val redValue: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
     val greenValue: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
     val blueValue: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
-    val hexColor: MutableLiveData<Int> by lazy {MutableLiveData<Int>()}
-    val hexString: MutableLiveData<String> by lazy {MutableLiveData<String>()}
+    val hexColor: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
+    val hexString: MutableLiveData<String> by lazy { MutableLiveData<String>() }
 
-    val primaryColorData: MutableLiveData<ColorData> by lazy {MutableLiveData<ColorData>()}
-
-    fun calculateHexColor() : String = Integer.toHexString(
+    fun calculateHexColor(): String = Integer.toHexString(
         Color.rgb(
             redValue.value ?: 0,
-            primaryColorData.value?.greenValue?.value ?: 0,
+            greenValue.value ?: 0,
             blueValue.value ?: 0
         )
     ).substring(2)
@@ -31,6 +29,5 @@ class ThemeColorViewModel : ViewModel() {
         redValue.value = 0
         greenValue.value = 0
         blueValue.value = 0
-        primaryColorData.value = ColorData()
     }
 }
