@@ -110,7 +110,6 @@ class NumberSelector : MaterialCardView {
                         Handler(Looper.getMainLooper()).postDelayed({
                             selectedNumber++
                             notifyNumberChange()
-                            validate()
                         }, it)
                     }
                 }
@@ -119,6 +118,7 @@ class NumberSelector : MaterialCardView {
                     val fadeInDown =
                         AnimationUtils.loadAnimation(context, R.anim.fade_in_slide_down)
                     textNumber.startAnimation(fadeInDown)
+                    validate()
                     isAnimating = false
                 }
 
@@ -140,7 +140,6 @@ class NumberSelector : MaterialCardView {
                         Handler(Looper.getMainLooper()).postDelayed({
                             selectedNumber--
                             notifyNumberChange()
-                            validate()
                         }, it)
                     }
                 }
@@ -149,6 +148,7 @@ class NumberSelector : MaterialCardView {
                     val fadeInUp =
                         AnimationUtils.loadAnimation(context, R.anim.fade_in_slide_up)
                     textNumber.startAnimation(fadeInUp)
+                    validate()
                     isAnimating = false
                 }
 
@@ -161,14 +161,8 @@ class NumberSelector : MaterialCardView {
     }
 
     private fun validate() {
-        when {
-            selectedNumber <= minNumber -> btnMinus.isEnabled = false
-            selectedNumber >= maxNumber -> btnPlus.isEnabled = false
-            else -> {
-                btnMinus.isEnabled = true
-                btnPlus.isEnabled = true
-            }
-        }
+        btnMinus.isEnabled = selectedNumber > minNumber
+        btnPlus.isEnabled = selectedNumber < maxNumber
     }
 
     fun onValuesChanges(linkingFunction: (Int) -> Unit) {
