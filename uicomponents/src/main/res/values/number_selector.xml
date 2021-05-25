@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NumberSelector">
+        <attr name="minNumber" format="integer"/>
+        <attr name="maxNumber" format="integer"/>
+        <attr name="selectedNumber" format="integer"/>
+        <attr name="delay" format="integer"/>
+        <attr name="iconColor" format="color"/>
+    </declare-styleable>
+</resources>
