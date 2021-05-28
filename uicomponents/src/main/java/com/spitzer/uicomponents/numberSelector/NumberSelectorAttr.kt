@@ -1,5 +1,6 @@
 package com.spitzer.uicomponents.numberSelector
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
@@ -14,6 +15,7 @@ internal data class NumberSelectorAttr(
 )
 
 internal object NumberSelectorAttrParser {
+    @SuppressLint("Recycle")
     fun parse(context: Context, attr: AttributeSet?): NumberSelectorAttr {
         val typedArray = context.obtainStyledAttributes(attr, R.styleable.NumberSelector)
 
