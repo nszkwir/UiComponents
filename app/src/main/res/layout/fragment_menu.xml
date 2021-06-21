@@ -34,5 +34,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/numberSelectorButton" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/genderPickerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_button_gender_picker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/animatedButtonButton" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

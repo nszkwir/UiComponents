@@ -40,7 +40,7 @@ internal object NumberSelectorAttrParser {
             )
         val iconColor =
             typedArray.getInteger(
-                R.styleable.NumberSelector_iconColor,
+                R.styleable.NumberSelector_numberSelectorIconColor,
                 Color().toArgb()
             )
 
