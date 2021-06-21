@@ -1,4 +1,5 @@
 <resources>
+
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">#000</item>
         <item name="colorPrimaryDark">#000</item>

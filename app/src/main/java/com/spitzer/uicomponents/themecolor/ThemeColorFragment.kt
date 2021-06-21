@@ -33,7 +33,7 @@ class ThemeColorFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val arrayOfColorSelectors = arrayListOf<ColorSelector>(
+        val arrayOfColorSelectors = arrayListOf(
             ColorSelector(requireContext()),
             ColorSelector(requireContext()),
             ColorSelector(requireContext())
@@ -49,7 +49,7 @@ class ThemeColorFragment : Fragment() {
             get(2).onValuesChanges { color: Int -> obtainBackgroundColor(color) }
         }
 
-        viewPagerAdapter = ColorSelectorViewPagerAdapter(requireContext(), arrayOfColorSelectors)
+        viewPagerAdapter = ColorSelectorViewPagerAdapter(arrayOfColorSelectors)
         vPager.adapter = viewPagerAdapter
     }
 

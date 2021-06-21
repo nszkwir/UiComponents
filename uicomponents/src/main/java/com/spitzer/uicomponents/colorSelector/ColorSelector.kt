@@ -39,13 +39,13 @@ class ColorSelector : MaterialCardView {
 
     private fun initAttrs(attributes: ColorSelectorAttr) {
         colorSelectorAttr = attributes
-        val config = ColorSelectorConfigurationFactory.create(context, colorSelectorAttr)
+        val config = ColorSelectorConfigurationFactory.create(colorSelectorAttr)
         setupComponents(config)
     }
 
     private fun initAttrs(attributes: AttributeSet?) {
         colorSelectorAttr = ColorSelectorAttrParser.parse(context, attributes)
-        val config = ColorSelectorConfigurationFactory.create(context, colorSelectorAttr)
+        val config = ColorSelectorConfigurationFactory.create(colorSelectorAttr)
         setupComponents(config)
     }
 
@@ -178,7 +178,7 @@ class ColorSelector : MaterialCardView {
             seekBarBlue.progress
         )
         colorSampler.setBackgroundColor(colorSelected)
-        hexColorText.setText(Integer.toHexString(colorSelected))
+        hexColorText.text = Integer.toHexString(colorSelected)
     }
 
     private fun setViewId() {

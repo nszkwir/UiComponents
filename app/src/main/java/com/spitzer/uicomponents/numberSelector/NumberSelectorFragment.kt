@@ -29,12 +29,16 @@ class NumberSelectorFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        numberSelector1.onValuesChanges{ selectedNumber: Int -> getSelectedNumber(selectedNumber) }
-        numberSelector2.onValuesChanges{ selectedNumber: Int -> getSelectedNumber(selectedNumber) }
-        numberSelector3.onValuesChanges{ selectedNumber: Int -> getSelectedNumber(selectedNumber) }
-        numberSelector4.onValuesChanges{ selectedNumber: Int -> getSelectedNumber(selectedNumber) }
-        numberSelectorX.onValuesChanges{ selectedNumber: Int -> getSelectedNumber(selectedNumber) }
-        defaultNumberSelector.onValuesChanges{ selectedNumber: Int -> getSelectedNumber(selectedNumber) }
+        numberSelector1.onValuesChanges { selectedNumber: Int -> getSelectedNumber(selectedNumber) }
+        numberSelector2.onValuesChanges { selectedNumber: Int -> getSelectedNumber(selectedNumber) }
+        numberSelector3.onValuesChanges { selectedNumber: Int -> getSelectedNumber(selectedNumber) }
+        numberSelector4.onValuesChanges { selectedNumber: Int -> getSelectedNumber(selectedNumber) }
+        numberSelectorX.onValuesChanges { selectedNumber: Int -> getSelectedNumber(selectedNumber) }
+        defaultNumberSelector.onValuesChanges { selectedNumber: Int ->
+            getSelectedNumber(
+                selectedNumber
+            )
+        }
     }
 
     private fun getSelectedNumber(selectedNumber: Int) {

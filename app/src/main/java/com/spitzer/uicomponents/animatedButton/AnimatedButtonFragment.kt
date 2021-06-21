@@ -33,19 +33,20 @@ class AnimatedButtonFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         animatedButton1.apply {
-            setOnButtonPressedFunction{ onButtonPressedContinueSuccess() }
-            setOnAnimationEndFunction{ onAnimationEnd() }
+            setOnButtonPressedFunction { onButtonPressedContinueSuccess() }
+            setOnAnimationEndFunction { onAnimationEnd() }
         }
         animatedButton2.apply {
-            setOnButtonPressedFunction{ onButtonPressedContinueError() }
-            setOnAnimationEndFunction{ onAnimationEnd() }
+            setOnButtonPressedFunction { onButtonPressedContinueError() }
+            setOnAnimationEndFunction { onAnimationEnd() }
         }
 
     }
 
     private fun onButtonPressedContinueSuccess() {
 
-        Toast.makeText(requireContext(), "onButtonPressedContinueSuccess", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), "onButtonPressedContinueSuccess", Toast.LENGTH_SHORT)
+            .show()
         scope.launch {
             try {
                 Thread.sleep(1000)

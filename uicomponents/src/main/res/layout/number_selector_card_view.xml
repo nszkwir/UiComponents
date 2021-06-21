@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:parentTag="com.google.android.material.card.MaterialCardView">
@@ -16,11 +16,11 @@
             android:layout_height="32dp"
             android:padding="8dp"
             android:src="@drawable/ic_remove"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/Black_Cow"
-            tools:tint="@color/Black_Cow"/>
+            tools:tint="@color/Black_Cow" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textNumber"
@@ -32,11 +32,11 @@
             android:paddingHorizontal="5dp"
             android:textColor="@color/Black_Cow"
             android:textSize="18sp"
-            tools:text="999"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnPlus"
             app:layout_constraintStart_toEndOf="@+id/btnMinus"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="999" />
 
         <ImageView
             android:id="@+id/btnPlus"
@@ -44,10 +44,10 @@
             android:layout_height="32dp"
             android:padding="8dp"
             android:src="@drawable/ic_add"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/Black_Cow"
-            tools:tint="@color/Black_Cow"/>
+            tools:tint="@color/Black_Cow" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </merge>

@@ -21,8 +21,10 @@ class NumberSelector : MaterialCardView {
     private var isAnimating: Boolean = false
 
     private val DEFAULT_ICON_COLOR: Int = ContextCompat.getColor(context, R.color.lightblue)
-    private val DEFAULT_DISABLED_ICON_COLOR: Int = ContextCompat.getColor(context, R.color.slategray)
-    private val DEFAULT_PRESSED_ICON_COLOR: Int = ContextCompat.getColor(context, R.color.greenyellow)
+    private val DEFAULT_DISABLED_ICON_COLOR: Int =
+        ContextCompat.getColor(context, R.color.slategray)
+    private val DEFAULT_PRESSED_ICON_COLOR: Int =
+        ContextCompat.getColor(context, R.color.greenyellow)
     var minNumber: Int = DEFAULT_MIN_NUMBER
     var maxNumber: Int = DEFAULT_MAX_NUMBER
     var selectedNumber: Int = DEFAULT_SELECTED_NUMBER

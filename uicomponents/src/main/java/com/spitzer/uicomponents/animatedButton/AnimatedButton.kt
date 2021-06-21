@@ -14,6 +14,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import com.spitzer.common.ProgressBarAnimation
 import com.spitzer.uicomponents.R
 import kotlinx.android.synthetic.main.animated_button_constraint_layout.view.*
@@ -22,9 +23,9 @@ import kotlinx.coroutines.runBlocking
 
 
 class AnimatedButton : ConstraintLayout {
-    private val BUTTON_DEFAULT_COLOR = ContextCompat.getColor(context, R.color.dodgerblue)
-    private val BUTTON_SUCCESS_COLOR = ContextCompat.getColor(context, R.color.limegreen)
-    private val BUTTON_ERROR_COLOR = ContextCompat.getColor(context, R.color.orangered)
+    private val buttonDefaultColor = ContextCompat.getColor(context, R.color.dodgerblue)
+    private val buttonSuccessColor = ContextCompat.getColor(context, R.color.limegreen)
+    private val buttonErrorColor = ContextCompat.getColor(context, R.color.orangered)
 
     private lateinit var animatedButtonAttr: AnimatedButtonAttr
     private lateinit var animatedButtonConfiguration: AnimatedButtonConfiguration
@@ -33,9 +34,9 @@ class AnimatedButton : ConstraintLayout {
 
     constructor(context: Context) : super(context) {
         val attrs = AnimatedButtonAttr(
-            buttonDefaultColor = BUTTON_DEFAULT_COLOR,
-            buttonSuccessColor = BUTTON_SUCCESS_COLOR,
-            buttonErrorColor = BUTTON_ERROR_COLOR,
+            buttonDefaultColor = buttonDefaultColor,
+            buttonSuccessColor = buttonSuccessColor,
+            buttonErrorColor = buttonErrorColor,
             animationDelay = ANIMATION_DELAY
         )
         initAttrs(attrs)
@@ -72,6 +73,7 @@ class AnimatedButton : ConstraintLayout {
         setViewId()
         requestLayout()
     }
+
     private fun initiateElements() {
         button_animated_button.setOnClickListener {
             startLoading()
@@ -101,9 +103,10 @@ class AnimatedButton : ConstraintLayout {
             val anim = ProgressBarAnimation(
                 progress_bar_animated_button,
                 progress.toFloat(),
-                PROGRESS_MAX)
+                PROGRESS_MAX
+            )
             anim.duration = PROGRESS_FAST
-            anim.setAnimationListener(object: Animation.AnimationListener {
+            anim.setAnimationListener(object : Animation.AnimationListener {
                 override fun onAnimationStart(animation: Animation?) = Unit
 
                 override fun onAnimationEnd(animation: Animation?) {
@@ -125,9 +128,10 @@ class AnimatedButton : ConstraintLayout {
             val anim = ProgressBarAnimation(
                 progress_bar_animated_button,
                 progress.toFloat(),
-                PROGRESS_MAX)
+                PROGRESS_MAX
+            )
             anim.duration = PROGRESS_FAST
-            anim.setAnimationListener(object: Animation.AnimationListener {
+            anim.setAnimationListener(object : Animation.AnimationListener {
                 override fun onAnimationStart(animation: Animation?) = Unit
 
                 override fun onAnimationEnd(animation: Animation?) {
@@ -147,15 +151,18 @@ class AnimatedButton : ConstraintLayout {
     private fun playSuccessAnimation() {
         progress_bar_animated_button.visibility = View.INVISIBLE
         text_animated_button.visibility = View.INVISIBLE
-        button_animated_button.background = resources.getDrawable(
-            R.drawable.animated_button_background_success_shape)
+        button_animated_button.background = ResourcesCompat.getDrawable(
+            resources,
+            R.drawable.animated_button_background_success_shape,
+            null
+        )
 
         val fromRadius = resources.getDimension(R.dimen.animated_button_from_radius)
         val toRadius = button_animated_button.height / 2f
         val fromWidth = button_animated_button.width
         val toWidth = button_animated_button.height
-        val fromColor = BUTTON_DEFAULT_COLOR
-        val toColor = BUTTON_SUCCESS_COLOR
+        val fromColor = buttonDefaultColor
+        val toColor = buttonSuccessColor
         val gradientDrawable = button_animated_button.background as GradientDrawable
 
         val cornerAnimator = ValueAnimator.ofFloat(fromRadius, toRadius)
@@ -188,7 +195,7 @@ class AnimatedButton : ConstraintLayout {
         widthAnimator.start()
         colorAnimator.start()
 
-        colorAnimator.addListener(object: Animator.AnimatorListener {
+        colorAnimator.addListener(object : Animator.AnimatorListener {
             override fun onAnimationStart(animation: Animator?) = Unit
 
             override fun onAnimationEnd(animation: Animator?) {
@@ -204,11 +211,14 @@ class AnimatedButton : ConstraintLayout {
     @SuppressLint("Recycle")
     private fun playErrorAnimation() {
         progress_bar_animated_button.visibility = View.INVISIBLE
-        button_animated_button.background = resources.getDrawable(
-            R.drawable.animated_button_background_error_shape)
+        button_animated_button.background = ResourcesCompat.getDrawable(
+            resources,
+            R.drawable.animated_button_background_error_shape,
+            null
+        )
 
-        val fromColor = BUTTON_DEFAULT_COLOR
-        val toColor = BUTTON_ERROR_COLOR
+        val fromColor = buttonDefaultColor
+        val toColor = buttonErrorColor
         val gradientDrawable = button_animated_button.background as GradientDrawable
 
         val colorAnimator = ValueAnimator.ofObject(ArgbEvaluator(), fromColor, toColor)
@@ -222,7 +232,7 @@ class AnimatedButton : ConstraintLayout {
 
         colorAnimator.start()
 
-        colorAnimator.addListener(object: Animator.AnimatorListener {
+        colorAnimator.addListener(object : Animator.AnimatorListener {
             override fun onAnimationStart(animation: Animator?) = Unit
 
             override fun onAnimationEnd(animation: Animator?) {
@@ -239,11 +249,14 @@ class AnimatedButton : ConstraintLayout {
         progress_bar_animated_button.progress = 0
         button_animated_button.isEnabled = false
         progress_bar_animated_button.visibility = View.INVISIBLE
-        button_animated_button.background = resources.getDrawable(
-            R.drawable.animated_button_background_error_shape)
+        button_animated_button.background = ResourcesCompat.getDrawable(
+            resources,
+            R.drawable.animated_button_background_error_shape,
+            null
+        )
 
-        val fromColor = BUTTON_ERROR_COLOR
-        val toColor = BUTTON_DEFAULT_COLOR
+        val fromColor = buttonErrorColor
+        val toColor = buttonDefaultColor
         val gradientDrawable = button_animated_button.background as GradientDrawable
 
         val colorAnimator = ValueAnimator.ofObject(ArgbEvaluator(), fromColor, toColor)
@@ -257,7 +270,7 @@ class AnimatedButton : ConstraintLayout {
 
         colorAnimator.start()
 
-        colorAnimator.addListener(object: Animator.AnimatorListener {
+        colorAnimator.addListener(object : Animator.AnimatorListener {
             override fun onAnimationStart(animation: Animator?) {
                 runBlocking {
                     delay(2000)
@@ -277,7 +290,7 @@ class AnimatedButton : ConstraintLayout {
 
     fun shakeButton() {
         val shake: Animation = AnimationUtils.loadAnimation(context, R.anim.shake_one)
-        shake.setAnimationListener(object: Animation.AnimationListener {
+        shake.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) = Unit
 
             override fun onAnimationEnd(animation: Animation?) {

@@ -28,19 +28,7 @@ class GenderPickerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        genderPicker1.onValuesChanges { selectedGender: Int -> getSelectedGender(selectedGender)   }
-
-        numberSelector1.onValuesChanges{ selectedNumber: Int -> getSelectedNumber(selectedNumber) }
-        numberSelector2.onValuesChanges{ selectedNumber: Int -> getSelectedNumber(selectedNumber) }
-        numberSelector3.onValuesChanges{ selectedNumber: Int -> getSelectedNumber(selectedNumber) }
-        numberSelector4.onValuesChanges{ selectedNumber: Int -> getSelectedNumber(selectedNumber) }
-        numberSelectorX.onValuesChanges{ selectedNumber: Int -> getSelectedNumber(selectedNumber) }
-        defaultNumberSelector.onValuesChanges{ selectedNumber: Int -> getSelectedNumber(selectedNumber) }
-    }
-
-    private fun getSelectedNumber(selectedNumber: Int) {
-        numberSelectedText.text = selectedNumber.toString()
+        genderPicker1.onValuesChanges { selectedGender: Int -> getSelectedGender(selectedGender) }
     }
 
     private fun getSelectedGender(selectedGender: Int) {

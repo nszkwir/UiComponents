@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="AnimatedButton">
-        <attr name="buttonDefaultColor" format="integer"/>
-        <attr name="buttonSuccessColor" format="integer"/>
-        <attr name="buttonErrorColor" format="integer"/>
-        <attr name="animationDelay" format="integer"/>
+        <attr name="buttonDefaultColor" format="integer" />
+        <attr name="buttonSuccessColor" format="integer" />
+        <attr name="buttonErrorColor" format="integer" />
+        <attr name="animationDelay" format="integer" />
     </declare-styleable>
 </resources>

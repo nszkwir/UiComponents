@@ -25,7 +25,7 @@ internal object ColorSelectorAttrParser {
             typedArray.getInteger(R.styleable.ColorSelector_minProgress, MIN_PROGRESS_VALUE)
         val maxProgress =
             typedArray.getInteger(R.styleable.ColorSelector_maxProgress, MAX_PROGRESS_VALUE)
-
+        typedArray.recycle()
         return ColorSelectorAttr(startingProgress, minProgress, maxProgress)
     }
 }
