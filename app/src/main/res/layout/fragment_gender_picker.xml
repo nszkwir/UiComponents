@@ -16,6 +16,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <com.spitzer.uicomponents.genderPicker.GenderPicker
+            android:id="@+id/genderPicker1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberSelectorButton" />
+
         <com.spitzer.uicomponents.numberSelector.NumberSelector
             android:id="@+id/defaultNumberSelector"
             android:layout_width="wrap_content"
@@ -23,7 +32,7 @@
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberSelectorButton" />
+            app:layout_constraintTop_toBottomOf="@+id/genderPicker1" />
 
         <com.spitzer.uicomponents.numberSelector.NumberSelector
             android:id="@+id/numberSelector1"
@@ -100,7 +109,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/numberSelectorX"/>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

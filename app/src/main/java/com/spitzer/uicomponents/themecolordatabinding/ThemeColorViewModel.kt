@@ -1,4 +1,4 @@
-package com.spitzer.uicomponents.themecolor
+package com.spitzer.uicomponents.themecolordatabinding
 
 import android.graphics.Color
 import androidx.lifecycle.MutableLiveData

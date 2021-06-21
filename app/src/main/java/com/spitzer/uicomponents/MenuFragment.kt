@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.spitzer.uicomponents.animatedButton.AnimatedButtonFragment
 import com.spitzer.uicomponents.databinding.FragmentMenuBinding
+import com.spitzer.uicomponents.genderPicker.GenderPickerFragment
 import com.spitzer.uicomponents.numberSelector.NumberSelectorFragment
 import com.spitzer.uicomponents.themecolor.ThemeColorFragment
 
@@ -43,6 +44,9 @@ class MenuFragment : Fragment() {
         binding.animatedButtonButton.setOnClickListener {
             navigateToFragment(ANIMATED_BUTTON_ACCESS)
         }
+        binding.genderPickerButton.setOnClickListener {
+            navigateToFragment(GENDER_PICKER_ACCESS)
+        }
     }
 
     private fun navigateToFragment(fragmentStringAccess: String) {
@@ -50,6 +54,7 @@ class MenuFragment : Fragment() {
             THEME_EDITOR_ACCESS -> ThemeColorFragment()
             NUMBER_SELECTOR_ACCESS -> NumberSelectorFragment()
             ANIMATED_BUTTON_ACCESS -> AnimatedButtonFragment()
+            GENDER_PICKER_ACCESS -> GenderPickerFragment()
             else -> Fragment()
         }
         parentFragmentManager.commit {
@@ -63,5 +68,6 @@ class MenuFragment : Fragment() {
         const val THEME_EDITOR_ACCESS = "THEME_EDITOR_ACCESS"
         const val NUMBER_SELECTOR_ACCESS = "NUMBER_SELECTOR_ACCESS"
         const val ANIMATED_BUTTON_ACCESS = "ANIMATED_BUTTON_ACCESS"
+        const val GENDER_PICKER_ACCESS = "GENDER_PICKER_ACCESS"
     }
 }

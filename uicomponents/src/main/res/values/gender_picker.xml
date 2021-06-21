@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GenderPicker">
+        <attr name="undefinedAvailable" format="boolean"/>
+        <attr name="genderPickerIconColor" format="color"/>
+    </declare-styleable>
+</resources>
