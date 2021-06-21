@@ -20,11 +20,13 @@ class NumberSelector : MaterialCardView {
     private lateinit var mLinkingFunction: (Int) -> Unit
     private var isAnimating: Boolean = false
 
-    private val DEFAULT_ICON_COLOR: Int = ContextCompat.getColor(context, R.color.lightblue)
-    private val DEFAULT_DISABLED_ICON_COLOR: Int = ContextCompat.getColor(context, R.color.slategray)
-    private val DEFAULT_PRESSED_ICON_COLOR: Int = ContextCompat.getColor(context, R.color.greenyellow)
-    var minNumber: Int = DEFAULT_MIN_NUMBER
-    var maxNumber: Int = DEFAULT_MAX_NUMBER
+    private val defaultIconColor: Int = ContextCompat.getColor(context, R.color.lightblue)
+    private val defaultDisabledIconColor: Int =
+        ContextCompat.getColor(context, R.color.slategray)
+    private val defaultPressedIconColor: Int =
+        ContextCompat.getColor(context, R.color.greenyellow)
+    private var minNumber: Int = DEFAULT_MIN_NUMBER
+    private var maxNumber: Int = DEFAULT_MAX_NUMBER
     var selectedNumber: Int = DEFAULT_SELECTED_NUMBER
 
     constructor(context: Context) : super(context) {
@@ -33,7 +35,7 @@ class NumberSelector : MaterialCardView {
             maxNumber = DEFAULT_MAX_NUMBER,
             selectedNumber = DEFAULT_SELECTED_NUMBER,
             delay = DEFAULT_DELAY,
-            iconColor = DEFAULT_ICON_COLOR
+            iconColor = defaultIconColor
         )
         initAttrs(attrs)
     }
@@ -83,8 +85,8 @@ class NumberSelector : MaterialCardView {
         textNumber.text = selectedNumber.toString()
 
         val colors = intArrayOf(
-            DEFAULT_DISABLED_ICON_COLOR,
-            DEFAULT_PRESSED_ICON_COLOR,
+            defaultDisabledIconColor,
+            defaultPressedIconColor,
             numberSelectorConfiguration.iconColor
         )
         val colorStateList = ColorStateList(states, colors)

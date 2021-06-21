@@ -1,12 +1,10 @@
 package com.spitzer.uicomponents.colorSelector
 
-import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 
 class ColorSelectorViewPagerAdapter(
-    private val context: Context,
     private val viewList: ArrayList<ColorSelector>
 ) :
     PagerAdapter() {

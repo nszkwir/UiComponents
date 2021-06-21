@@ -25,79 +25,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/numberSelectorButton" />
 
-        <com.spitzer.uicomponents.numberSelector.NumberSelector
-            android:id="@+id/defaultNumberSelector"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/genderPicker1" />
-
-        <com.spitzer.uicomponents.numberSelector.NumberSelector
-            android:id="@+id/numberSelector1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:minNumber="-2"
-            app:maxNumber="5"
-            app:selectedNumber="4"
-            app:numberSelectorIconColor="@color/blueviolet"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/defaultNumberSelector" />
-
-        <com.spitzer.uicomponents.numberSelector.NumberSelector
-            android:id="@+id/numberSelector2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:maxNumber="5"
-            app:selectedNumber="4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberSelector1" />
-
-        <com.spitzer.uicomponents.numberSelector.NumberSelector
-            android:id="@+id/numberSelector3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:minNumber="7"
-            app:maxNumber="3"
-            app:selectedNumber="4"
-            app:numberSelectorIconColor="@color/Green_Snake"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberSelector2" />
-
-        <com.spitzer.uicomponents.numberSelector.NumberSelector
-            android:id="@+id/numberSelector4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:minNumber="7"
-            app:maxNumber="13"
-            app:selectedNumber="4"
-            app:numberSelectorIconColor="@color/Green_Snake"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberSelector3" />
-
-        <com.spitzer.uicomponents.numberSelector.NumberSelector
-            android:id="@+id/numberSelectorX"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:minNumber="2"
-            app:maxNumber="3"
-            app:selectedNumber="2"
-            app:numberSelectorIconColor="@color/Bean_Red"
-            app:delay="20"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberSelector4" />
-
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/numberSelectedText"
             style="@style/TextAppearance.AppCompat.Title"
@@ -108,7 +35,7 @@
             android:text="X"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberSelectorX"/>
+            app:layout_constraintTop_toBottomOf="@+id/genderPicker1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

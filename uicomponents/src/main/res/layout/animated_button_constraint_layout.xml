@@ -6,42 +6,41 @@
     android:layout_height="match_parent"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
-        <ImageButton
-            android:id="@+id/button_animated_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:visibility="visible"
-            android:foregroundTint="@color/Aquamarine"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:id="@+id/button_animated_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foregroundTint="@color/Aquamarine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
-        <ProgressBar
-            android:id="@+id/progress_bar_animated_button"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:progressDrawable="@drawable/animated_button_progress"
-            android:visibility="invisible"
-            tools:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="@+id/button_animated_button"
-            app:layout_constraintEnd_toEndOf="@+id/button_animated_button"
-            app:layout_constraintStart_toStartOf="@+id/button_animated_button"
-            app:layout_constraintTop_toTopOf="@+id/button_animated_button" />
+    <ProgressBar
+        android:id="@+id/progress_bar_animated_button"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:progressDrawable="@drawable/animated_button_progress"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/button_animated_button"
+        app:layout_constraintEnd_toEndOf="@+id/button_animated_button"
+        app:layout_constraintStart_toStartOf="@+id/button_animated_button"
+        app:layout_constraintTop_toTopOf="@+id/button_animated_button"
+        tools:visibility="visible" />
 
-        <TextView
-            android:id="@+id/text_animated_button"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            style="bold"
-            android:layout_height="match_parent"
-            android:text="PROGRESS BUTTON"
-            android:textColor="@color/whitesmoke"
-            app:layout_constraintBottom_toBottomOf="@+id/button_animated_button"
-            app:layout_constraintEnd_toEndOf="@+id/button_animated_button"
-            app:layout_constraintStart_toStartOf="@+id/button_animated_button"
-            app:layout_constraintTop_toTopOf="@+id/button_animated_button" />
-
+    <TextView
+        android:id="@+id/text_animated_button"
+        style="bold"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="PROGRESS BUTTON"
+        android:textColor="@color/whitesmoke"
+        app:layout_constraintBottom_toBottomOf="@+id/button_animated_button"
+        app:layout_constraintEnd_toEndOf="@+id/button_animated_button"
+        app:layout_constraintStart_toStartOf="@+id/button_animated_button"
+        app:layout_constraintTop_toTopOf="@+id/button_animated_button" />
 
 </merge>

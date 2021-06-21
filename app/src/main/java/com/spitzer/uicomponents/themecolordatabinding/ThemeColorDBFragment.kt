@@ -51,7 +51,7 @@ class ThemeColorDBFragment : Fragment() {
             get(2).onValuesChanges { color: Int -> obtainBackgroundColor(color) }
         }
 
-        viewPagerAdapter = ColorSelectorViewPagerAdapter(requireContext(), arrayOfColorSelectors)
+        viewPagerAdapter = ColorSelectorViewPagerAdapter(arrayOfColorSelectors)
         vPager.adapter = viewPagerAdapter
     }
 

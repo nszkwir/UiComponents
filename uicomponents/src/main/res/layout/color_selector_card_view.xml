@@ -112,7 +112,7 @@
         app:layout_constraintStart_toEndOf="@+id/redValueText"
         app:layout_constraintTop_toTopOf="@+id/seekBarRed" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <TextView
         android:id="@+id/hexColorText"
         style="@style/TextAppearance.AppCompat.Caption"
         android:layout_width="70dp"

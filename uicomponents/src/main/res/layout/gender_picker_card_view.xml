@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:parentTag="com.google.android.material.card.MaterialCardView">
@@ -19,33 +19,33 @@
         <RadioButton
             android:id="@+id/radio0"
             android:layout_width="40dp"
-            android:gravity="center"
             android:layout_height="wrap_content"
             android:background="@color/radio_button_background_selector"
             android:button="@android:color/transparent"
             android:checked="true"
+            android:gravity="center"
             android:text="H"
             android:textColor="@color/radio_button_text_selector" />
 
         <RadioButton
             android:id="@+id/radio1"
-            android:gravity="center"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:background="@color/radio_button_background_selector"
             android:button="@android:color/transparent"
             android:checked="false"
+            android:gravity="center"
             android:text="M"
             android:textColor="@color/radio_button_text_selector" />
 
         <RadioButton
             android:id="@+id/radio2"
-            android:gravity="center"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:background="@color/radio_button_background_selector"
             android:button="@android:color/transparent"
             android:checked="false"
+            android:gravity="center"
             android:text="T"
             android:textColor="@color/radio_button_text_selector" />
     </RadioGroup>

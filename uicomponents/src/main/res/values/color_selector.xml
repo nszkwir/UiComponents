@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ColorSelector">
-        <attr name="startingProgress" format="integer"/>
-        <attr name="minProgress" format="integer"/>
-        <attr name="maxProgress" format="integer"/>
+        <attr name="startingProgress" format="integer" />
+        <attr name="minProgress" format="integer" />
+        <attr name="maxProgress" format="integer" />
     </declare-styleable>
 </resources>
