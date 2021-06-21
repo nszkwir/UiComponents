@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.SeekBar
 import com.google.android.material.card.MaterialCardView
 import com.spitzer.uicomponents.R
-import kotlinx.android.synthetic.main.card_view_color_selector.view.*
+import kotlinx.android.synthetic.main.color_selector_card_view.view.*
 
 class ColorSelector : MaterialCardView {
     private lateinit var colorSelectorAttr: ColorSelectorAttr
@@ -51,7 +51,7 @@ class ColorSelector : MaterialCardView {
 
     private fun setupComponents(config: ColorSelectorConfiguration) {
         colorSelectorConfiguration = config
-        LayoutInflater.from(context).inflate(R.layout.card_view_color_selector, this)
+        LayoutInflater.from(context).inflate(R.layout.color_selector_card_view, this)
         preventCornerOverlap = true
         useCompatPadding = true
         elevation = resources.getDimension(R.dimen.card_view_normal_elevation)

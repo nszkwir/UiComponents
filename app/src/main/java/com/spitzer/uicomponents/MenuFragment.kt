@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
+import com.spitzer.uicomponents.animatedButton.AnimatedButtonFragment
 import com.spitzer.uicomponents.databinding.FragmentMenuBinding
 import com.spitzer.uicomponents.numberSelector.NumberSelectorFragment
 import com.spitzer.uicomponents.themecolor.ThemeColorFragment
@@ -39,12 +40,16 @@ class MenuFragment : Fragment() {
         binding.numberSelectorButton.setOnClickListener {
             navigateToFragment(NUMBER_SELECTOR_ACCESS)
         }
+        binding.animatedButtonButton.setOnClickListener {
+            navigateToFragment(ANIMATED_BUTTON_ACCESS)
+        }
     }
 
     private fun navigateToFragment(fragmentStringAccess: String) {
         val fragment: Fragment = when (fragmentStringAccess) {
             THEME_EDITOR_ACCESS -> ThemeColorFragment()
             NUMBER_SELECTOR_ACCESS -> NumberSelectorFragment()
+            ANIMATED_BUTTON_ACCESS -> AnimatedButtonFragment()
             else -> Fragment()
         }
         parentFragmentManager.commit {
@@ -57,5 +62,6 @@ class MenuFragment : Fragment() {
     companion object {
         const val THEME_EDITOR_ACCESS = "THEME_EDITOR_ACCESS"
         const val NUMBER_SELECTOR_ACCESS = "NUMBER_SELECTOR_ACCESS"
+        const val ANIMATED_BUTTON_ACCESS = "ANIMATED_BUTTON_ACCESS"
     }
 }

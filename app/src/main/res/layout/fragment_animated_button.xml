@@ -8,31 +8,32 @@
         android:padding="@dimen/main_fragment_container_padding">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/themeEditorButton"
+            android:id="@+id/animatedButtonButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/menu_button_theme_color_picker"
+            android:text="BOTON 1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/numberSelectorButton"
+        <com.spitzer.uicomponents.animatedButton.AnimatedButton
+            android:id="@+id/animatedButton1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/menu_button_number_selector"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/themeEditorButton" />
+            app:layout_constraintTop_toBottomOf="@+id/animatedButtonButton" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/animatedButtonButton"
+        <com.spitzer.uicomponents.animatedButton.AnimatedButton
+            android:id="@+id/animatedButton2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/menu_button_animated_button"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberSelectorButton" />
-
+            app:layout_constraintTop_toBottomOf="@+id/animatedButton1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

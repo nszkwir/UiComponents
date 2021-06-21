@@ -12,7 +12,7 @@ import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 import com.google.android.material.card.MaterialCardView
 import com.spitzer.uicomponents.R
-import kotlinx.android.synthetic.main.card_view_number_selector.view.*
+import kotlinx.android.synthetic.main.number_selector_card_view.view.*
 
 class NumberSelector : MaterialCardView {
     private lateinit var numberSelectorAttr: NumberSelectorAttr
@@ -20,9 +20,9 @@ class NumberSelector : MaterialCardView {
     private lateinit var mLinkingFunction: (Int) -> Unit
     private var isAnimating: Boolean = false
 
-    val DEFAULT_ICON_COLOR: Int = ContextCompat.getColor(context, R.color.lightblue)
-    val DEFAULT_DISABLED_ICON_COLOR: Int = ContextCompat.getColor(context, R.color.slategray)
-    val DEFAULT_PRESSED_ICON_COLOR: Int = ContextCompat.getColor(context, R.color.greenyellow)
+    private val DEFAULT_ICON_COLOR: Int = ContextCompat.getColor(context, R.color.lightblue)
+    private val DEFAULT_DISABLED_ICON_COLOR: Int = ContextCompat.getColor(context, R.color.slategray)
+    private val DEFAULT_PRESSED_ICON_COLOR: Int = ContextCompat.getColor(context, R.color.greenyellow)
     var minNumber: Int = DEFAULT_MIN_NUMBER
     var maxNumber: Int = DEFAULT_MAX_NUMBER
     var selectedNumber: Int = DEFAULT_SELECTED_NUMBER
@@ -52,20 +52,20 @@ class NumberSelector : MaterialCardView {
 
     private fun initAttrs(attributes: NumberSelectorAttr) {
         numberSelectorAttr = attributes
-        val config = NumberSelectorConfigurationFactory.create(context, numberSelectorAttr)
+        val config = NumberSelectorConfigurationFactory.create(numberSelectorAttr)
         setupComponents(config)
     }
 
     private fun initAttrs(attributes: AttributeSet?) {
         numberSelectorAttr = NumberSelectorAttrParser.parse(context, attributes)
-        val config = NumberSelectorConfigurationFactory.create(context, numberSelectorAttr)
+        val config = NumberSelectorConfigurationFactory.create(numberSelectorAttr)
         setupComponents(config)
     }
 
     private fun setupComponents(config: NumberSelectorConfiguration) {
         numberSelectorConfiguration = config
 
-        LayoutInflater.from(context).inflate(R.layout.card_view_number_selector, this)
+        LayoutInflater.from(context).inflate(R.layout.number_selector_card_view, this)
         preventCornerOverlap = true
         useCompatPadding = true
         elevation = resources.getDimension(R.dimen.card_view_normal_elevation)
