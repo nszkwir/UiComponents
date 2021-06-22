@@ -4,4 +4,5 @@
     <string name="menu_button_number_selector" tools:ignore="ExtraTranslation">Number Selector</string>
     <string name="menu_button_animated_button" tools:ignore="ExtraTranslation">Animated Button</string>
     <string name="menu_button_gender_picker" tools:ignore="ExtraTranslation">Gender Picker</string>
+    <string name="menu_button_date_time_picker" tools:ignore="ExtraTranslation">Date and Time Picker</string>
 </resources>

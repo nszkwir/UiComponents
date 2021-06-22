@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <data
-        />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -11,149 +9,139 @@
         android:background="@color/lightcyan"
         android:padding="@dimen/main_fragment_container_padding">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/themeEditorButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="BOTON 1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/themeEditorButton" >
-        <androidx.constraintlayout.widget.ConstraintLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp">
+            app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/titleLabel"
-                style="@style/TextAppearance.AppCompat.Body1"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="Color"
-                tools:text="Color" />
+                android:padding="8dp">
 
-            <SeekBar
-                android:id="@+id/seekBarRed"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="16dp"
-                android:elevation="1dp"
-                android:indeterminate="false"
-                android:tooltipText="RED"
-                app:layout_constraintEnd_toStartOf="@+id/redValueText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleLabel" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/titleLabel"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Color"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Color" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/redValueText"
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toStartOf="@+id/colorSampler"
-                app:layout_constraintStart_toEndOf="@+id/seekBarRed"
-                app:layout_constraintTop_toTopOf="@+id/seekBarRed" />
+                <SeekBar
+                    android:id="@+id/seekBarRed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:elevation="1dp"
+                    android:indeterminate="false"
+                    android:tooltipText="RED"
+                    app:layout_constraintEnd_toStartOf="@+id/redValueText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleLabel" />
 
-            <SeekBar
-                android:id="@+id/seekBarGreen"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="16dp"
-                android:elevation="1dp"
-                android:indeterminate="false"
-                android:tooltipText="GREEN"
-                app:layout_constraintEnd_toStartOf="@+id/greenValueText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/seekBarRed" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/redValueText"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/colorSampler"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarRed"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarRed" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/greenValueText"
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toStartOf="@+id/colorSampler"
-                app:layout_constraintStart_toEndOf="@+id/seekBarGreen"
-                app:layout_constraintTop_toTopOf="@+id/seekBarGreen" />
+                <SeekBar
+                    android:id="@+id/seekBarGreen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:elevation="1dp"
+                    android:indeterminate="false"
+                    android:tooltipText="GREEN"
+                    app:layout_constraintEnd_toStartOf="@+id/greenValueText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarRed" />
 
-            <SeekBar
-                android:id="@+id/seekBarBlue"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="16dp"
-                android:elevation="1dp"
-                android:indeterminate="false"
-                android:tooltipText="BLUE"
-                app:layout_constraintEnd_toStartOf="@+id/blueValueText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/seekBarGreen" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/greenValueText"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/colorSampler"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarGreen"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarGreen" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/blueValueText"
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toStartOf="@+id/colorSampler"
-                app:layout_constraintStart_toEndOf="@+id/seekBarBlue"
-                app:layout_constraintTop_toTopOf="@+id/seekBarBlue" />
+                <SeekBar
+                    android:id="@+id/seekBarBlue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:elevation="1dp"
+                    android:indeterminate="false"
+                    android:tooltipText="BLUE"
+                    app:layout_constraintEnd_toStartOf="@+id/blueValueText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarGreen" />
 
-            <SeekBar
-                android:id="@+id/seekBarAlpha"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="16dp"
-                android:elevation="1dp"
-                android:indeterminate="false"
-                android:tooltipText="BLUE"
-                app:layout_constraintEnd_toStartOf="@+id/alphaValueText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/seekBarBlue" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/blueValueText"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/colorSampler"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarBlue"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarBlue" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/alphaValueText"
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toStartOf="@+id/colorSampler"
-                app:layout_constraintStart_toEndOf="@+id/seekBarAlpha"
-                app:layout_constraintTop_toTopOf="@+id/seekBarAlpha" />
+                <SeekBar
+                    android:id="@+id/seekBarAlpha"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:elevation="1dp"
+                    android:indeterminate="false"
+                    android:tooltipText="BLUE"
+                    app:layout_constraintEnd_toStartOf="@+id/alphaValueText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarBlue" />
 
-            <View
-                android:id="@+id/colorSampler"
-                android:layout_width="70dp"
-                android:layout_height="40dp"
-                android:background="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/redValueText"
-                app:layout_constraintTop_toTopOf="@+id/seekBarRed" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/alphaValueText"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/colorSampler"
+                    app:layout_constraintStart_toEndOf="@+id/seekBarAlpha"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarAlpha" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/hexColorText"
-                style="@style/TextAppearance.AppCompat.Caption"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:editable="false"
-                android:textIsSelectable="true"
-                app:layout_constraintEnd_toEndOf="@+id/colorSampler"
-                app:layout_constraintStart_toStartOf="@+id/colorSampler"
-                app:layout_constraintTop_toBottomOf="@+id/colorSampler" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <View
+                    android:id="@+id/colorSampler"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/redValueText"
+                    app:layout_constraintTop_toTopOf="@+id/seekBarRed" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/hexColorText"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:editable="false"
+                    android:textIsSelectable="true"
+                    app:layout_constraintEnd_toEndOf="@+id/colorSampler"
+                    app:layout_constraintStart_toStartOf="@+id/colorSampler"
+                    app:layout_constraintTop_toBottomOf="@+id/colorSampler" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

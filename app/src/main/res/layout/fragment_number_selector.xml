@@ -7,15 +7,6 @@
         android:layout_height="match_parent"
         android:padding="@dimen/main_fragment_container_padding">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/numberSelectorButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="BOTON 1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <com.spitzer.uicomponents.numberSelector.NumberSelector
             android:id="@+id/defaultNumberSelector"
             android:layout_width="wrap_content"
@@ -23,71 +14,71 @@
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberSelectorButton" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.spitzer.uicomponents.numberSelector.NumberSelector
             android:id="@+id/numberSelector1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:minNumber="-2"
-            app:maxNumber="5"
-            app:selectedNumber="4"
-            app:numberSelectorIconColor="@color/blueviolet"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/defaultNumberSelector" />
+            app:layout_constraintTop_toBottomOf="@+id/defaultNumberSelector"
+            app:maxNumber="5"
+            app:minNumber="-2"
+            app:numberSelectorIconColor="@color/blueviolet"
+            app:selectedNumber="4" />
 
         <com.spitzer.uicomponents.numberSelector.NumberSelector
             android:id="@+id/numberSelector2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:maxNumber="5"
-            app:selectedNumber="4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberSelector1" />
+            app:layout_constraintTop_toBottomOf="@+id/numberSelector1"
+            app:maxNumber="5"
+            app:selectedNumber="4" />
 
         <com.spitzer.uicomponents.numberSelector.NumberSelector
             android:id="@+id/numberSelector3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:minNumber="7"
-            app:maxNumber="3"
-            app:selectedNumber="4"
-            app:numberSelectorIconColor="@color/Green_Snake"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberSelector2" />
+            app:layout_constraintTop_toBottomOf="@+id/numberSelector2"
+            app:maxNumber="3"
+            app:minNumber="7"
+            app:numberSelectorIconColor="@color/Green_Snake"
+            app:selectedNumber="4" />
 
         <com.spitzer.uicomponents.numberSelector.NumberSelector
             android:id="@+id/numberSelector4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:minNumber="7"
-            app:maxNumber="13"
-            app:selectedNumber="4"
-            app:numberSelectorIconColor="@color/Green_Snake"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberSelector3" />
+            app:layout_constraintTop_toBottomOf="@+id/numberSelector3"
+            app:maxNumber="13"
+            app:minNumber="7"
+            app:numberSelectorIconColor="@color/Green_Snake"
+            app:selectedNumber="4" />
 
         <com.spitzer.uicomponents.numberSelector.NumberSelector
             android:id="@+id/numberSelectorX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:minNumber="2"
-            app:maxNumber="3"
-            app:selectedNumber="2"
-            app:numberSelectorIconColor="@color/Bean_Red"
             app:delay="20"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberSelector4" />
+            app:layout_constraintTop_toBottomOf="@+id/numberSelector4"
+            app:maxNumber="3"
+            app:minNumber="2"
+            app:numberSelectorIconColor="@color/Bean_Red"
+            app:selectedNumber="2" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/numberSelectedText"
@@ -99,8 +90,7 @@
             android:text="X"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberSelectorX"/>
-
+            app:layout_constraintTop_toBottomOf="@+id/numberSelectorX" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
