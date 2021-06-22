@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/main_fragment_container_padding">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="Time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/timeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/timeEditText"
+            app:layout_constraintTop_toTopOf="@+id/timeEditText"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/timeEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            tools:text="5:32"
+            android:text="click to set time"
+            android:textSize="22sp"
+            app:layout_constraintStart_toEndOf="@+id/timeIcon"
+            app:layout_constraintTop_toBottomOf="@+id/timeText"/>
+
+<!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/dateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="12sp"
+            android:text="Date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timeEditText"/>
+
+        <ImageView
+            android:id="@+id/dateIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_calendar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/dateEditText"
+            app:layout_constraintTop_toTopOf="@+id/dateEditText"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/dateEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            tools:text="2021-02-03"
+            android:text="click to set date"
+            android:textSize="22sp"
+            app:layout_constraintStart_toEndOf="@+id/dateIcon"
+            app:layout_constraintTop_toBottomOf="@+id/dateText"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

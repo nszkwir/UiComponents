@@ -7,15 +7,6 @@
         android:layout_height="match_parent"
         android:padding="@dimen/main_fragment_container_padding">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/numberSelectorButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="BOTON 1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <com.spitzer.uicomponents.genderPicker.GenderPicker
             android:id="@+id/genderPicker1"
             android:layout_width="wrap_content"
@@ -23,7 +14,7 @@
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberSelectorButton" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/numberSelectedText"
