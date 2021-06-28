@@ -16,17 +16,18 @@ class GenderPicker : CardView {
     private lateinit var genderPickerConfiguration: GenderPickerConfiguration
     private lateinit var mLinkingFunction: (Int) -> Unit
 
-    private val DEFAULT_ICON_COLOR: Int =
+    private val defaultIconColor: Int =
         ContextCompat.getColor(context, R.color.lightblue)
-    private val DEFAULT_DISABLED_ICON_COLOR: Int =
+    private val defaultDisabledIconColor: Int =
         ContextCompat.getColor(context, R.color.slategray)
-    private val DEFAULT_PRESSED_ICON_COLOR: Int =
+    private val defaultPressedIconColor: Int =
         ContextCompat.getColor(context, R.color.greenyellow)
 
     constructor(context: Context) : super(context) {
         val attrs = GenderPickerAttr(
             undefinedAvailable = DEFAULT_UNDEFINED_AVAILABLE,
-            iconColor = DEFAULT_ICON_COLOR
+            iconColor = defaultIconColor,
+            defaultSelectedChoice = DEFAULT_SELECTED_CHOICE
         )
         initAttrs(attrs)
     }
@@ -64,35 +65,50 @@ class GenderPicker : CardView {
         elevation = resources.getDimension(R.dimen.card_view_normal_elevation)
         radius = resources.getDimension(R.dimen.card_view_normal_radius)
 
-        initiateElements()
+        initiateElements(config)
         setViewId()
         requestLayout()
     }
 
-    private fun initiateElements() {
-        // TODO validate if should show or hide Undefined genre button
-        genderPickerRadioGroup.setOnCheckedChangeListener { group, checkedId ->
+    private fun initiateElements(config: GenderPickerConfiguration) {
+        // TODO allow to set backgound & font colors for selected/non selected
+        genderPickerRadioGroup.radio2.visibility = when(config.undefinedAvailable) {
+            true -> View.VISIBLE
+            else -> View.GONE
+        }
+        genderPickerRadioGroup.check(
+            when (config.selectedChoice) {
+                0 -> R.id.radio0
+                1 -> R.id.radio1
+                2 -> R.id.radio2
+                else -> R.id.radio0
+            }
+        )
+        genderPickerRadioGroup.setOnCheckedChangeListener { _, checkedId ->
+            getSelectedValueById(checkedId)
+        }
+    }
 
-            when (checkedId) {
-                R.id.radio0 -> {
-                    mLinkingFunction(0)
-                }
-                R.id.radio1 -> {
-                    mLinkingFunction(1)
-                }
-                R.id.radio2 -> {
-                    mLinkingFunction(2)
-                }
-                else -> {
-                    mLinkingFunction(-1)
-                }
+    private fun getSelectedValueById(radioButtonId: Int) {
+        when (radioButtonId) {
+            R.id.radio0 -> {
+                mLinkingFunction(0)
+            }
+            R.id.radio1 -> {
+                mLinkingFunction(1)
+            }
+            R.id.radio2 -> {
+                mLinkingFunction(2)
+            }
+            else -> {
+                mLinkingFunction(-1)
             }
         }
-
     }
 
     fun onValuesChanges(linkingFunction: (Int) -> Unit) {
         mLinkingFunction = linkingFunction
+        getSelectedValueById(genderPickerRadioGroup.checkedRadioButtonId)
     }
 
     private fun setViewId() {
@@ -103,6 +119,8 @@ class GenderPicker : CardView {
 
     companion object {
         const val DEFAULT_UNDEFINED_AVAILABLE = false
+        const val DEFAULT_SELECTED_CHOICE = 0
+
         val states = arrayOf(
             intArrayOf(-android.R.attr.state_enabled),
             intArrayOf(android.R.attr.state_pressed),

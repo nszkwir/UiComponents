@@ -3,5 +3,6 @@
     <declare-styleable name="GenderPicker">
         <attr name="undefinedAvailable" format="boolean" />
         <attr name="genderPickerIconColor" format="color" />
+        <attr name="selectedChoice" format="integer" />
     </declare-styleable>
 </resources>

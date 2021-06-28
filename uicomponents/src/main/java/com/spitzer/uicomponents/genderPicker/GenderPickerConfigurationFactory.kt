@@ -2,7 +2,8 @@ package com.spitzer.uicomponents.genderPicker
 
 internal data class GenderPickerConfiguration(
     var undefinedAvailable: Boolean,
-    var iconColor: Int
+    var iconColor: Int,
+    var selectedChoice: Int
 )
 
 internal object GenderPickerConfigurationFactory {
@@ -11,7 +12,8 @@ internal object GenderPickerConfigurationFactory {
     ): GenderPickerConfiguration {
         return GenderPickerConfiguration(
             genderPickerAttr.undefinedAvailable,
-            genderPickerAttr.iconColor
+            genderPickerAttr.iconColor,
+            genderPickerAttr.defaultSelectedChoice
         )
     }
 }

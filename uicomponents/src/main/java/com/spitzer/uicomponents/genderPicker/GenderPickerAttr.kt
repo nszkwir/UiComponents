@@ -8,7 +8,8 @@ import com.spitzer.uicomponents.R
 
 internal data class GenderPickerAttr(
     val undefinedAvailable: Boolean,
-    val iconColor: Int
+    val iconColor: Int,
+    val defaultSelectedChoice: Int
 )
 
 internal object GenderPickerAttrParser {
@@ -25,7 +26,12 @@ internal object GenderPickerAttrParser {
                 R.styleable.GenderPicker_genderPickerIconColor,
                 Color().toArgb()
             )
+        val selectedChoice =
+            typedArray.getInteger(
+                R.styleable.GenderPicker_selectedChoice,
+                GenderPicker.DEFAULT_SELECTED_CHOICE
+            )
 
-        return GenderPickerAttr(undefinedAvailable, iconColor)
+        return GenderPickerAttr(undefinedAvailable, iconColor, selectedChoice)
     }
 }
