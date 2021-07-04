@@ -11,6 +11,7 @@ import com.spitzer.uicomponents.databinding.FragmentMenuBinding
 import com.spitzer.uicomponents.dateAndTimePicker.DateAndTimePickerFragment
 import com.spitzer.uicomponents.genderPicker.GenderPickerFragment
 import com.spitzer.uicomponents.numberSelector.NumberSelectorFragment
+import com.spitzer.uicomponents.searchCard.SearchCardFragment
 import com.spitzer.uicomponents.themecolor.ThemeColorFragment
 
 class MenuFragment : Fragment() {
@@ -51,6 +52,9 @@ class MenuFragment : Fragment() {
         binding.dateTimePickerButton.setOnClickListener {
             navigateToFragment(DATE_TIME_PICKER_ACCESS)
         }
+        binding.searchCard.setOnClickListener {
+            navigateToFragment(SEARCH_CARD_ACCESS)
+        }
     }
 
     private fun navigateToFragment(fragmentStringAccess: String) {
@@ -60,6 +64,7 @@ class MenuFragment : Fragment() {
             ANIMATED_BUTTON_ACCESS -> AnimatedButtonFragment()
             GENDER_PICKER_ACCESS -> GenderPickerFragment()
             DATE_TIME_PICKER_ACCESS -> DateAndTimePickerFragment()
+            SEARCH_CARD_ACCESS -> SearchCardFragment()
             else -> Fragment()
         }
         parentFragmentManager.commit {
@@ -75,5 +80,6 @@ class MenuFragment : Fragment() {
         const val ANIMATED_BUTTON_ACCESS = "ANIMATED_BUTTON_ACCESS"
         const val GENDER_PICKER_ACCESS = "GENDER_PICKER_ACCESS"
         const val DATE_TIME_PICKER_ACCESS = "DATE_TIME_PICKER_ACCESS"
+        const val SEARCH_CARD_ACCESS = "SEARCH_CARD_ACCESS"
     }
 }

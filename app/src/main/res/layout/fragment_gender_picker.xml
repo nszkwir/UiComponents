@@ -5,6 +5,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/Platinum"
         android:padding="@dimen/main_fragment_container_padding">
 
         <com.spitzer.uicomponents.genderPicker.GenderPicker
@@ -12,6 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            app:genderPickerBackgroundColor="@color/Blueberry_Blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -23,11 +25,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:defaultFocusHighlightEnabled="true"
+            app:genderPickerBackgroundColor="@color/Avocado_Green"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/genderPicker1"
             app:selectedChoice="1"
             app:undefinedAvailable="false" />
+
 
         <com.spitzer.uicomponents.genderPicker.GenderPicker
             android:id="@+id/genderPicker3"

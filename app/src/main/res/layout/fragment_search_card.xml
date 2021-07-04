@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Platinum"
+        android:padding="@dimen/main_fragment_container_padding">
+
+        <com.spitzer.uicomponents.searchcard.SearchCard
+            android:id="@+id/searchCard1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.spitzer.uicomponents.searchcard.SearchCard
+            android:id="@+id/searchCard2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintText="Search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchCard1"
+            app:searchCardTextSize="12"
+            app:showDrawableEnd="false" />
+
+        <com.spitzer.uicomponents.searchcard.SearchCard
+            android:id="@+id/searchCard3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintText="Buscar cliente ..."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchCard2"
+            app:searchCardTextSize="22" />
+
+        <com.spitzer.uicomponents.searchcard.SearchCard
+            android:id="@+id/searchCard4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:drawableEndColor="@color/blue"
+            app:hintText="Buscar ..."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchCard3" />
+
+        <com.spitzer.uicomponents.searchcard.SearchCard
+            android:id="@+id/searchCard5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:drawableEnd="@drawable/ic_calendar"
+            app:drawableEndColor="@color/gray"
+            app:editableText="true"
+            app:hintText="Buscar fecha..."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchCard4"
+            app:searchCardRadius="55" />
+
+        <com.spitzer.uicomponents.searchcard.SearchCard
+            android:id="@+id/searchCard6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:drawableEnd="@drawable/ic_calendar"
+            app:drawableEndColor="@color/red"
+            app:editableText="true"
+            app:hintText="Buscar fecha..."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchCard5"
+            app:searchCardRadius="35"
+            app:searchCardTextSize="14"
+            app:showCompactDesign="true" />
+
+        <com.spitzer.uicomponents.searchcard.SearchCard
+            android:id="@+id/searchCard7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:drawableEndColor="@color/Blue_Ivy"
+            app:editableText="true"
+            app:hintText="Buscar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchCard6"
+            app:searchCardRadius="16"
+            app:searchCardTextSize="16"
+            app:showCompactDesign="true" />
+
+        <com.spitzer.uicomponents.searchcard.SearchCard
+            android:id="@+id/searchCard8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:drawableEndColor="@color/Sea_Turtle_Green"
+            app:editableText="true"
+            app:hintText="Buscar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchCard7"
+            app:searchCardRadius="25"
+            app:searchCardTextSize="14"
+            app:showCompactDesign="true" />
+
+        <TextView
+            android:id="@+id/textViewSearchCardSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchCard8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

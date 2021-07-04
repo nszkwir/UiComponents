@@ -1,6 +1,7 @@
 package com.spitzer.uicomponents.genderPicker
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -22,11 +23,18 @@ class GenderPicker : CardView {
         ContextCompat.getColor(context, R.color.slategray)
     private val defaultPressedIconColor: Int =
         ContextCompat.getColor(context, R.color.greenyellow)
+    private val defaultEnabledBackgroundColor: Int =
+        ContextCompat.getColor(context, R.color.white)
+    private val defaultDisabledBackgroundColor: Int =
+        ContextCompat.getColor(context, R.color.slategray)
+    private val defaultPressedBackgroundColor: Int =
+        ContextCompat.getColor(context, R.color.dodgerblue)
 
     constructor(context: Context) : super(context) {
         val attrs = GenderPickerAttr(
             undefinedAvailable = DEFAULT_UNDEFINED_AVAILABLE,
             iconColor = defaultIconColor,
+            backgroundColor = defaultPressedBackgroundColor,
             defaultSelectedChoice = DEFAULT_SELECTED_CHOICE
         )
         initAttrs(attrs)
@@ -72,7 +80,14 @@ class GenderPicker : CardView {
 
     private fun initiateElements(config: GenderPickerConfiguration) {
         // TODO allow to set backgound & font colors for selected/non selected
-        genderPickerRadioGroup.radio2.visibility = when(config.undefinedAvailable) {
+        val colors = intArrayOf(config.backgroundColor)
+        val colorStateList = ColorStateList(states, colors)
+        radio0.backgroundTintList = colorStateList
+        radio1.backgroundTintList = colorStateList
+        radio2.backgroundTintList = colorStateList
+
+
+        genderPickerRadioGroup.radio2.visibility = when (config.undefinedAvailable) {
             true -> View.VISIBLE
             else -> View.GONE
         }
@@ -120,11 +135,6 @@ class GenderPicker : CardView {
     companion object {
         const val DEFAULT_UNDEFINED_AVAILABLE = false
         const val DEFAULT_SELECTED_CHOICE = 0
-
-        val states = arrayOf(
-            intArrayOf(-android.R.attr.state_enabled),
-            intArrayOf(android.R.attr.state_pressed),
-            intArrayOf(android.R.attr.state_enabled)
-        )
+        val states = arrayOf(intArrayOf(android.R.attr.state_checked))
     }
 }

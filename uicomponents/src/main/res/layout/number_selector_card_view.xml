@@ -32,7 +32,7 @@
             android:gravity="center"
             android:paddingHorizontal="5dp"
             android:textColor="@color/Black_Cow"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnPlus"
             app:layout_constraintStart_toEndOf="@+id/btnMinus"

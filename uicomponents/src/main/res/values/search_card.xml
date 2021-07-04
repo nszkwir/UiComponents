@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SearchCard">
+        <attr name="hintText" format="string" />
+        <attr name="editableText" format="boolean" />
+        <attr name="showDrawableEnd" format="boolean" />
+        <attr name="drawableEnd" format="integer" />
+        <attr name="drawableEndColor" format="integer" />
+        <attr name="searchCardRadius" format="integer" />
+        <attr name="showCompactDesign" format="boolean" />
+        <attr name="searchCardTextSize" format="integer" />
+    </declare-styleable>
+</resources>
