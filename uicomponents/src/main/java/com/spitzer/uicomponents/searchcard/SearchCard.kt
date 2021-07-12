@@ -142,18 +142,28 @@ class SearchCard : MaterialCardView {
         onClickLinkingFunction = linkingFunction
     }
 
-    fun onTextChangedFunction(onTextChangedFunction: (
-        text: CharSequence?,
-        start: Int,
-        before: Int,
-        count: Int
-    ) -> Unit) {
+    fun onTextChangedFunction(
+        onTextChangedFunction: (
+            text: CharSequence?,
+            start: Int,
+            before: Int,
+            count: Int
+        ) -> Unit
+    ) {
         onTextChangeLinkingFunction = onTextChangedFunction
     }
 
     private fun setViewId() {
         if (id == NO_ID) {
             id = View.generateViewId()
+        }
+    }
+
+    fun setText(newText: String) {
+        if (searchTextInput.visibility == View.VISIBLE) {
+            searchTextInput.setText(newText)
+        } else {
+            searchText.text = newText
         }
     }
 
