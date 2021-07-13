@@ -6,6 +6,7 @@ import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.ColorStateList
+import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -15,6 +16,7 @@ import android.view.animation.AnimationUtils
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import com.spitzer.common.ProgressBarAnimation
 import com.spitzer.uicomponents.R
 import kotlinx.android.synthetic.main.animated_button_constraint_layout.view.*
@@ -23,9 +25,10 @@ import kotlinx.coroutines.runBlocking
 
 
 class AnimatedButton : ConstraintLayout {
-    private val buttonDefaultColor = ContextCompat.getColor(context, R.color.dodgerblue)
-    private val buttonSuccessColor = ContextCompat.getColor(context, R.color.limegreen)
-    private val buttonErrorColor = ContextCompat.getColor(context, R.color.orangered)
+    var buttonDefaultColor: Int = ContextCompat.getColor(context, DEFAULT_BUTTON_COLOR)
+    var buttonSuccessColor: Int = ContextCompat.getColor(context, SUCCESS_BUTTON_COLOR)
+    var buttonErrorColor: Int = ContextCompat.getColor(context, ERROR_BUTTON_COLOR)
+    var progressColor: Int = ContextCompat.getColor(context, PROGRESS_COLOR)
 
     private lateinit var animatedButtonAttr: AnimatedButtonAttr
     private lateinit var animatedButtonConfiguration: AnimatedButtonConfiguration
@@ -34,10 +37,13 @@ class AnimatedButton : ConstraintLayout {
 
     constructor(context: Context) : super(context) {
         val attrs = AnimatedButtonAttr(
-            buttonDefaultColor = buttonDefaultColor,
-            buttonSuccessColor = buttonSuccessColor,
-            buttonErrorColor = buttonErrorColor,
-            animationDelay = ANIMATION_DELAY
+            buttonDefaultColor = ContextCompat.getColor(context, DEFAULT_BUTTON_COLOR),
+            buttonSuccessColor = ContextCompat.getColor(context, SUCCESS_BUTTON_COLOR),
+            buttonErrorColor = ContextCompat.getColor(context, ERROR_BUTTON_COLOR),
+            animationDelay = ANIMATION_DELAY,
+            progressColor = ContextCompat.getColor(context, PROGRESS_COLOR),
+            buttonText = DEFAULT_BUTTON_TEXT,
+            textColor = ContextCompat.getColor(context, TEXT_COLOR),
         )
         initAttrs(attrs)
     }
@@ -69,16 +75,52 @@ class AnimatedButton : ConstraintLayout {
     private fun setupComponents(config: AnimatedButtonConfiguration) {
         animatedButtonConfiguration = config
         LayoutInflater.from(context).inflate(R.layout.animated_button_constraint_layout, this)
-        initiateElements()
+        initiateElements(config)
         setViewId()
         requestLayout()
     }
 
-    private fun initiateElements() {
-        button_animated_button.setOnClickListener {
-            startLoading()
-            onButtonPressedFunction()
+    private fun initiateElements(config: AnimatedButtonConfiguration) {
+//        buttonDefaultColor = ContextCompat.getColor(context, config.buttonDefaultColor)
+//        buttonSuccessColor = ContextCompat.getColor(context, config.buttonSuccessColor)
+//        buttonErrorColor = ContextCompat.getColor(context, config.buttonErrorColor)
+        buttonDefaultColor = config.buttonDefaultColor
+        buttonSuccessColor = config.buttonSuccessColor
+        buttonErrorColor = config.buttonErrorColor
+        progressColor = config.progressColor
+
+        text_animated_button.apply {
+            text = config.buttonText
+            setTextColor(config.textColor)
         }
+
+        // Setting button drawable
+        val unwrappedButtonDrawable =
+            ResourcesCompat.getDrawable(
+                resources,
+                R.drawable.animated_button_background_starting_shape,
+                null
+            )
+        val wrappedButtonDrawable: Drawable = DrawableCompat.wrap(unwrappedButtonDrawable!!)
+        DrawableCompat.setTint(wrappedButtonDrawable, buttonDefaultColor)
+        button_animated_button.apply {
+            background = wrappedButtonDrawable
+            setOnClickListener {
+                startLoading()
+                onButtonPressedFunction()
+            }
+        }
+
+        // Setting progress drawable
+        val unwrappedProgressDrawable =
+            ResourcesCompat.getDrawable(
+                resources,
+                R.drawable.animated_button_progress,
+                null
+            )
+        val wrappedProgressDrawable: Drawable = DrawableCompat.wrap(unwrappedProgressDrawable!!)
+        DrawableCompat.setTint(wrappedProgressDrawable, progressColor)
+        progress_bar_animated_button.progressDrawable = wrappedProgressDrawable
     }
 
     fun setOnButtonPressedFunction(linkFunction: () -> Unit) {
@@ -315,5 +357,12 @@ class AnimatedButton : ConstraintLayout {
         const val PROGRESS_MAX = 100f
         const val PROGRESS_FAST = 500L
         const val PROGRESS_SLOW = 4000L
+        val DEFAULT_BUTTON_COLOR = R.color.dodgerblue
+        val SUCCESS_BUTTON_COLOR = R.color.limegreen
+        val ERROR_BUTTON_COLOR = R.color.orangered
+        val PROGRESS_COLOR = R.color.blueviolet
+        val TEXT_COLOR = R.color.white
+
+        const val DEFAULT_BUTTON_TEXT = "PROGRESS BUTTON"
     }
 }

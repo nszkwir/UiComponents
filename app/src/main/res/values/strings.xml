@@ -6,4 +6,5 @@
     <string name="menu_button_gender_picker" tools:ignore="ExtraTranslation">Gender Picker</string>
     <string name="menu_button_date_time_picker" tools:ignore="ExtraTranslation">Date and Time Picker</string>
     <string name="menu_button_search_card" tools:ignore="ExtraTranslation">Search Card</string>
+    <string name="menu_button_custom_button" tools:ignore="ExtraTranslation">Custom Button</string>
 </resources>

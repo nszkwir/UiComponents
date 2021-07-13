@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
-    <ImageButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_animated_button"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,6 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:translationZ="1dp"
         tools:visibility="visible" />
 
     <ProgressBar
@@ -22,6 +23,7 @@
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:translationZ="10dp"
         android:progressDrawable="@drawable/animated_button_progress"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/button_animated_button"
@@ -36,6 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:translationZ="20dp"
         android:text="PROGRESS BUTTON"
         android:textColor="@color/whitesmoke"
         app:layout_constraintBottom_toBottomOf="@+id/button_animated_button"

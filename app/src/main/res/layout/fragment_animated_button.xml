@@ -14,9 +14,15 @@
             android:layout_height="40dp"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="20dp"
+            app:buttonDefaultColor="@color/yellowgreen"
+            app:buttonErrorColor="@color/Ferrari_Red"
+            app:buttonSuccessColor="@color/Ferrari_Red"
+            app:buttonText="BUTTON 1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:textColor="@color/Water"
+            app:progressColor="@color/Electric_Blue" />
 
         <com.spitzer.uicomponents.animatedButton.AnimatedButton
             android:id="@+id/animatedButton2"
@@ -24,8 +30,75 @@
             android:layout_height="40dp"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="20dp"
+            app:buttonDefaultColor="@color/Black"
+            app:buttonErrorColor="@color/Cherry_Red"
+            app:buttonSuccessColor="@color/Electric_Blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/animatedButton1" />
+            app:layout_constraintTop_toBottomOf="@+id/animatedButton1"
+            app:textColor="@color/white"
+            app:progressColor="@color/Blue_Diamond" />
+
+        <com.spitzer.uicomponents.animatedButton.AnimatedButton
+            android:id="@+id/animatedButton3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            app:buttonDefaultColor="@color/Yellow_Green"
+            app:buttonSuccessColor="@color/Blueberry_Blue"
+            app:buttonText="BUTTON 3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/animatedButton2"
+            app:textColor="@color/Granite"
+            app:progressColor="@color/black" />
+
+        <com.spitzer.uicomponents.animatedButton.AnimatedButton
+            android:id="@+id/animatedButton4"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            app:buttonDefaultColor="@color/Ferrari_Red"
+            app:buttonErrorColor="@color/Carnation_Pink"
+            app:buttonText="Another button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/animatedButton3"
+            app:textColor="@color/white"
+            app:progressColor="@color/Yellow" />
+
+        <com.spitzer.uicomponents.animatedButton.AnimatedButton
+            android:id="@+id/animatedButton5"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            app:buttonDefaultColor="@color/Blue_Dress"
+            app:buttonErrorColor="@color/Ferrari_Red"
+            app:buttonSuccessColor="@color/Green_Apple"
+            app:buttonText="Success example"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/animatedButton4"
+            app:textColor="@color/white"
+            app:progressColor="@color/Green_Apple" />
+
+        <com.spitzer.uicomponents.animatedButton.AnimatedButton
+            android:id="@+id/animatedButton6"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            app:buttonDefaultColor="@color/Blue_Dress"
+            app:buttonErrorColor="@color/Ferrari_Red"
+            app:buttonSuccessColor="@color/Green_Apple"
+            app:buttonText="Error example"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/animatedButton5"
+            app:textColor="@color/white"
+            app:progressColor="@color/Green_Apple" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

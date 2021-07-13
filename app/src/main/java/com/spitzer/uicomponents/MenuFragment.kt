@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.spitzer.uicomponents.animatedButton.AnimatedButtonFragment
+import com.spitzer.uicomponents.customButton.CustomButtonFragment
 import com.spitzer.uicomponents.databinding.FragmentMenuBinding
 import com.spitzer.uicomponents.dateAndTimePicker.DateAndTimePickerFragment
 import com.spitzer.uicomponents.genderPicker.GenderPickerFragment
@@ -55,6 +56,9 @@ class MenuFragment : Fragment() {
         binding.searchCard.setOnClickListener {
             navigateToFragment(SEARCH_CARD_ACCESS)
         }
+        binding.customButton.setOnClickListener {
+            navigateToFragment(CUSTOM_BUTTON_ACCESS)
+        }
     }
 
     private fun navigateToFragment(fragmentStringAccess: String) {
@@ -65,6 +69,8 @@ class MenuFragment : Fragment() {
             GENDER_PICKER_ACCESS -> GenderPickerFragment()
             DATE_TIME_PICKER_ACCESS -> DateAndTimePickerFragment()
             SEARCH_CARD_ACCESS -> SearchCardFragment()
+            CUSTOM_BUTTON_ACCESS -> CustomButtonFragment()
+
             else -> Fragment()
         }
         parentFragmentManager.commit {
@@ -81,5 +87,7 @@ class MenuFragment : Fragment() {
         const val GENDER_PICKER_ACCESS = "GENDER_PICKER_ACCESS"
         const val DATE_TIME_PICKER_ACCESS = "DATE_TIME_PICKER_ACCESS"
         const val SEARCH_CARD_ACCESS = "SEARCH_CARD_ACCESS"
+        const val CUSTOM_BUTTON_ACCESS = "CUSTOM_BUTTON_ACCESS"
+
     }
 }

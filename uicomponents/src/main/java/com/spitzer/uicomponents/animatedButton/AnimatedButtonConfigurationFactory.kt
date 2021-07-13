@@ -4,7 +4,10 @@ internal data class AnimatedButtonConfiguration(
     var buttonDefaultColor: Int,
     var buttonSuccessColor: Int,
     var buttonErrorColor: Int,
-    var animationDelay: Int
+    var animationDelay: Int,
+    var progressColor: Int,
+    var buttonText: String,
+    var textColor: Int
 )
 
 internal object AnimatedButtonConfigurationFactory {
@@ -15,7 +18,10 @@ internal object AnimatedButtonConfigurationFactory {
             animatedButtonAttr.buttonDefaultColor,
             animatedButtonAttr.buttonSuccessColor,
             animatedButtonAttr.buttonErrorColor,
-            animatedButtonAttr.animationDelay
+            animatedButtonAttr.animationDelay,
+            animatedButtonAttr.progressColor,
+            animatedButtonAttr.buttonText,
+            animatedButtonAttr.textColor
         )
     }
 }
