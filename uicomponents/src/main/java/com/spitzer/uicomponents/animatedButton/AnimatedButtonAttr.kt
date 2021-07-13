@@ -10,6 +10,8 @@ import com.spitzer.uicomponents.animatedButton.AnimatedButton.Companion.DEFAULT_
 import com.spitzer.uicomponents.animatedButton.AnimatedButton.Companion.ERROR_BUTTON_COLOR
 import com.spitzer.uicomponents.animatedButton.AnimatedButton.Companion.PROGRESS_COLOR
 import com.spitzer.uicomponents.animatedButton.AnimatedButton.Companion.SUCCESS_BUTTON_COLOR
+import com.spitzer.uicomponents.animatedButton.AnimatedButton.Companion.SUCCESS_ICON
+import com.spitzer.uicomponents.animatedButton.AnimatedButton.Companion.SUCCESS_ICON_COLOR
 import com.spitzer.uicomponents.animatedButton.AnimatedButton.Companion.TEXT_COLOR
 
 internal data class AnimatedButtonAttr(
@@ -19,7 +21,9 @@ internal data class AnimatedButtonAttr(
     val animationDelay: Int,
     val progressColor: Int,
     val buttonText: String,
-    val textColor: Int
+    val textColor: Int,
+    val successIcon: Int,
+    val successIconColor: Int
 )
 
 internal object AnimatedButtonAttrParser {
@@ -54,6 +58,14 @@ internal object AnimatedButtonAttrParser {
             R.styleable.AnimatedButton_textColor,
             Color.valueOf(TEXT_COLOR).toArgb()
         )
+        val successIcon = typedArray.getResourceId(
+            R.styleable.AnimatedButton_successIcon,
+            SUCCESS_ICON
+        )
+        val successIconColor = typedArray.getInteger(
+            R.styleable.AnimatedButton_successIconColor,
+            Color.valueOf(SUCCESS_ICON_COLOR).toArgb()
+        )
 
         typedArray.recycle()
 
@@ -64,7 +76,9 @@ internal object AnimatedButtonAttrParser {
             animationDelay,
             progressColor,
             buttonText,
-            textColor
+            textColor,
+            successIcon,
+            successIconColor
         )
     }
 }

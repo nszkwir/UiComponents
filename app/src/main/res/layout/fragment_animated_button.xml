@@ -21,8 +21,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:textColor="@color/Water"
-            app:progressColor="@color/Electric_Blue" />
+            app:progressColor="@color/Electric_Blue"
+            app:successIcon="@drawable/ic_time"
+            app:successIconColor="@color/Yellow"
+            app:textColor="@color/Water" />
 
         <com.spitzer.uicomponents.animatedButton.AnimatedButton
             android:id="@+id/animatedButton2"
@@ -36,8 +38,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/animatedButton1"
-            app:textColor="@color/white"
-            app:progressColor="@color/Blue_Diamond" />
+            app:progressColor="@color/Blue_Diamond"
+            app:textColor="@color/white" />
 
         <com.spitzer.uicomponents.animatedButton.AnimatedButton
             android:id="@+id/animatedButton3"
@@ -51,8 +53,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/animatedButton2"
-            app:textColor="@color/Granite"
-            app:progressColor="@color/black" />
+            app:progressColor="@color/black"
+            app:successIconColor="@color/white"
+            app:textColor="@color/Granite" />
 
         <com.spitzer.uicomponents.animatedButton.AnimatedButton
             android:id="@+id/animatedButton4"
@@ -66,8 +69,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/animatedButton3"
-            app:textColor="@color/white"
-            app:progressColor="@color/Yellow" />
+            app:progressColor="@color/Yellow"
+            app:textColor="@color/white" />
 
         <com.spitzer.uicomponents.animatedButton.AnimatedButton
             android:id="@+id/animatedButton5"
@@ -82,8 +85,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/animatedButton4"
-            app:textColor="@color/white"
-            app:progressColor="@color/Green_Apple" />
+            app:progressColor="@color/Green_Apple"
+            app:successIconColor="@color/white"
+            app:textColor="@color/white" />
 
         <com.spitzer.uicomponents.animatedButton.AnimatedButton
             android:id="@+id/animatedButton6"
@@ -98,7 +102,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/animatedButton5"
-            app:textColor="@color/white"
-            app:progressColor="@color/Green_Apple" />
+            app:progressColor="@color/Green_Apple"
+            app:textColor="@color/white" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

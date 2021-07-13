@@ -29,11 +29,13 @@ class AnimatedButton : ConstraintLayout {
     var buttonSuccessColor: Int = ContextCompat.getColor(context, SUCCESS_BUTTON_COLOR)
     var buttonErrorColor: Int = ContextCompat.getColor(context, ERROR_BUTTON_COLOR)
     var progressColor: Int = ContextCompat.getColor(context, PROGRESS_COLOR)
+    var successIconColor: Int = ContextCompat.getColor(context, SUCCESS_ICON_COLOR)
 
     private lateinit var animatedButtonAttr: AnimatedButtonAttr
     private lateinit var animatedButtonConfiguration: AnimatedButtonConfiguration
     private lateinit var onButtonPressedFunction: () -> Unit
     private lateinit var onAnimationEndFunction: () -> Unit
+    private var isButtonEnabled: Boolean = true
 
     constructor(context: Context) : super(context) {
         val attrs = AnimatedButtonAttr(
@@ -44,6 +46,8 @@ class AnimatedButton : ConstraintLayout {
             progressColor = ContextCompat.getColor(context, PROGRESS_COLOR),
             buttonText = DEFAULT_BUTTON_TEXT,
             textColor = ContextCompat.getColor(context, TEXT_COLOR),
+            successIcon = SUCCESS_ICON,
+            successIconColor = ContextCompat.getColor(context, SUCCESS_ICON_COLOR)
         )
         initAttrs(attrs)
     }
@@ -106,8 +110,10 @@ class AnimatedButton : ConstraintLayout {
         button_animated_button.apply {
             background = wrappedButtonDrawable
             setOnClickListener {
-                startLoading()
-                onButtonPressedFunction()
+                if (isButtonEnabled) {
+                    startLoading()
+                    onButtonPressedFunction()
+                }
             }
         }
 
@@ -121,6 +127,18 @@ class AnimatedButton : ConstraintLayout {
         val wrappedProgressDrawable: Drawable = DrawableCompat.wrap(unwrappedProgressDrawable!!)
         DrawableCompat.setTint(wrappedProgressDrawable, progressColor)
         progress_bar_animated_button.progressDrawable = wrappedProgressDrawable
+
+        // Setting success icon drawable
+        val unwrappedSuccessIconDrawable =
+            ResourcesCompat.getDrawable(
+                resources,
+                config.successIcon,
+                null
+            )
+        val wrappedSuccessIconDrawable: Drawable =
+            DrawableCompat.wrap(unwrappedSuccessIconDrawable!!)
+        DrawableCompat.setTint(wrappedSuccessIconDrawable, config.successIconColor)
+        success_icon_animated_button.setImageDrawable(wrappedSuccessIconDrawable)
     }
 
     fun setOnButtonPressedFunction(linkFunction: () -> Unit) {
@@ -237,10 +255,20 @@ class AnimatedButton : ConstraintLayout {
         widthAnimator.start()
         colorAnimator.start()
 
+        success_icon_animated_button.apply {
+            alpha = 0f
+            visibility = View.VISIBLE
+            animate()
+                .alpha(1f)
+                .setDuration(100)
+                .setListener(null)
+        }
+
         colorAnimator.addListener(object : Animator.AnimatorListener {
             override fun onAnimationStart(animation: Animator?) = Unit
 
             override fun onAnimationEnd(animation: Animator?) {
+                isButtonEnabled = false
                 onAnimationEndFunction()
             }
 
@@ -362,7 +390,8 @@ class AnimatedButton : ConstraintLayout {
         val ERROR_BUTTON_COLOR = R.color.orangered
         val PROGRESS_COLOR = R.color.blueviolet
         val TEXT_COLOR = R.color.white
-
+        val SUCCESS_ICON_COLOR = R.color.white
+        val SUCCESS_ICON = R.drawable.ic_success_24
         const val DEFAULT_BUTTON_TEXT = "PROGRESS BUTTON"
     }
 }

@@ -46,4 +46,17 @@
         app:layout_constraintStart_toStartOf="@+id/button_animated_button"
         app:layout_constraintTop_toTopOf="@+id/button_animated_button" />
 
+    <ImageView
+        android:id="@+id/success_icon_animated_button"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:translationZ="25dp"
+        android:src="@drawable/ic_success_24"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/button_animated_button"
+        app:layout_constraintEnd_toEndOf="@+id/button_animated_button"
+        app:layout_constraintStart_toStartOf="@+id/button_animated_button"
+        app:layout_constraintTop_toTopOf="@+id/button_animated_button" />
 </merge>
