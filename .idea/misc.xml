@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/uicomponents/src/main/res/drawable/animated_button_progress_bar.xml" />
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/fragment_gender_picker.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/fragment_keyword_search.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/fragment_number_selector.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/fragment_search_card.xml" value="0.19479166666666667" />
+        <entry key="uicomponents/src/main/res/drawable/animated_button_background_error_shape.xml" value="0.2557291666666667" />
+        <entry key="uicomponents/src/main/res/drawable/animated_button_background_starting_shape.xml" value="0.2557291666666667" />
+        <entry key="uicomponents/src/main/res/drawable/animated_button_background_success_shape.xml" value="0.2557291666666667" />
+        <entry key="uicomponents/src/main/res/drawable/ic_add.xml" value="0.2557291666666667" />
+        <entry key="uicomponents/src/main/res/drawable/ic_remove.xml" value="0.2557291666666667" />
+        <entry key="uicomponents/src/main/res/drawable/ic_search_24.xml" value="0.2557291666666667" />
+        <entry key="uicomponents/src/main/res/drawable/keyword_background_shape.xml" value="0.2557291666666667" />
+        <entry key="uicomponents/src/main/res/drawable/search_background_shape.xml" value="0.2557291666666667" />
+        <entry key="uicomponents/src/main/res/layout/keyword_item.xml" value="0.33" />
+        <entry key="uicomponents/src/main/res/layout/keyword_search_view.xml" value="0.33" />
+        <entry key="uicomponents/src/main/res/layout/number_selector_card_view.xml" value="0.35052083333333334" />
+        <entry key="uicomponents/src/main/res/layout/search_card_view.xml" value="0.23958333333333334" />
+        <entry key="uicomponents/src/main/res/layout/search_keyword_layout.xml" value="0.23958333333333334" />
+        <entry key="uicomponents/src/main/res/layout/search_keyword_view.xml" value="0.33" />
+      </map>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

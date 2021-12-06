@@ -94,9 +94,9 @@ class SearchCard : MaterialCardView {
                     onClickLinkingFunction()
                 }
             }
-            searchTextInput.visibility = GONE
+            addKeywordText.visibility = GONE
         } else {
-            searchTextInput.apply {
+            addKeywordText.apply {
                 visibility = VISIBLE
                 hint = config.hintText
                 setTextSize(
@@ -108,15 +108,15 @@ class SearchCard : MaterialCardView {
             if (config.showDrawableEnd) {
                 val colors = intArrayOf(config.drawableEndColor, config.drawableEndColor)
                 val colorStateList = ColorStateList(states, colors)
-                searchTextInput.apply {
+                addKeywordText.apply {
                     setRightDrawable(config.drawableEnd)
                     compoundDrawableTintList = colorStateList
                 }
             } else {
-                searchTextInput.setRightDrawable(null)
+                addKeywordText.setRightDrawable(null)
             }
             if (config.editableText) {
-                searchTextInput.apply {
+                addKeywordText.apply {
                     isCursorVisible = true
                     focusable = FOCUSABLE
                     doOnTextChanged { text, start, before, count ->
@@ -124,7 +124,7 @@ class SearchCard : MaterialCardView {
                     }
                 }
             } else {
-                searchTextInput.apply {
+                addKeywordText.apply {
                     isCursorVisible = false
                     focusable = NOT_FOCUSABLE
                     setOnClickListener {
@@ -160,8 +160,8 @@ class SearchCard : MaterialCardView {
     }
 
     fun setText(newText: String) {
-        if (searchTextInput.visibility == View.VISIBLE) {
-            searchTextInput.setText(newText)
+        if (addKeywordText.visibility == View.VISIBLE) {
+            addKeywordText.setText(newText)
         } else {
             searchText.text = newText
         }

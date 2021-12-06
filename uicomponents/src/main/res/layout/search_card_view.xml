@@ -14,7 +14,7 @@
         android:paddingVertical="10dp">
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/searchTextInput"
+            android:id="@+id/addKeywordText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:foregroundGravity="center_vertical"

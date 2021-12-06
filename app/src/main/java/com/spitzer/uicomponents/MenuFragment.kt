@@ -11,6 +11,7 @@ import com.spitzer.uicomponents.customButton.CustomButtonFragment
 import com.spitzer.uicomponents.databinding.FragmentMenuBinding
 import com.spitzer.uicomponents.dateAndTimePicker.DateAndTimePickerFragment
 import com.spitzer.uicomponents.genderPicker.GenderPickerFragment
+import com.spitzer.uicomponents.keywordsearch.KeywordSearchFragment
 import com.spitzer.uicomponents.numberSelector.NumberSelectorFragment
 import com.spitzer.uicomponents.searchCard.SearchCardFragment
 import com.spitzer.uicomponents.themecolor.ThemeColorFragment
@@ -59,6 +60,9 @@ class MenuFragment : Fragment() {
         binding.customButton.setOnClickListener {
             navigateToFragment(CUSTOM_BUTTON_ACCESS)
         }
+        binding.keywordSearch.setOnClickListener {
+            navigateToFragment(KEYWORD_SEARCH_ACCESS)
+        }
     }
 
     private fun navigateToFragment(fragmentStringAccess: String) {
@@ -70,7 +74,7 @@ class MenuFragment : Fragment() {
             DATE_TIME_PICKER_ACCESS -> DateAndTimePickerFragment()
             SEARCH_CARD_ACCESS -> SearchCardFragment()
             CUSTOM_BUTTON_ACCESS -> CustomButtonFragment()
-
+            KEYWORD_SEARCH_ACCESS -> KeywordSearchFragment()
             else -> Fragment()
         }
         parentFragmentManager.commit {
@@ -88,6 +92,6 @@ class MenuFragment : Fragment() {
         const val DATE_TIME_PICKER_ACCESS = "DATE_TIME_PICKER_ACCESS"
         const val SEARCH_CARD_ACCESS = "SEARCH_CARD_ACCESS"
         const val CUSTOM_BUTTON_ACCESS = "CUSTOM_BUTTON_ACCESS"
-
+        const val KEYWORD_SEARCH_ACCESS = "KEYWORD_SEARCH_ACCESS"
     }
 }
